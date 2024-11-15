@@ -1,0 +1,74 @@
+/* editor.css */
+.editor {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  top: 0;
+}
+
+.textarea {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  resize: none;
+}
+
+.normaleditor {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+
+.header {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.filename {}
+
+.toggleview {}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  margin-top: -20px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.editors {
+  margin-top: 20px;
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
+.handleEditors {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.handleEditors>div {
+  flex: 1;
+  overflow: auto;
+  resize: horizontal;
+  min-width: 150px;
+  /* Minimum width for each editor */
+  border-right: 1px solid #ddd;
+}
+
+.handleEditors>div:last-child {
+  border-right: none;
+  /* Remove border for the last editor */
+}

@@ -1,0 +1,17 @@
+button {
+  cursor: pointer;
+}
+
+.sidebar {
+  flex: 0 0 250px;
+  background-color: #f4f4f4;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+  resize: horizontal;
+  min-width: 150px;
+  max-width: 50%;
+}
+
+a {
+  cursor: pointer;
+}
