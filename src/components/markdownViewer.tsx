@@ -1,14 +1,14 @@
-import React from "react";
+import { useStateStore } from "../store";
+import "../css/editor.css";
 import Markdown from "react-markdown";
 
-interface Props {
-  content: string;
-}
+const MarkdownViewer = () => {
+  const content = useStateStore((state) => state.contents);
 
-const MarkdownViewer: React.FC<Props> = ({ content }) => {
   return (
-    <div>
-      <Markdown>{content}</Markdown>
+    <div className="markdownviewer">
+      <Markdown>{content || ""}</Markdown>{" "}
+      {/* Agrega una cadena vacía como valor predeterminado */}
     </div>
   );
 };

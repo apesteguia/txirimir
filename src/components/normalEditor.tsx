@@ -1,13 +1,12 @@
 import "../css/editor.css";
+import { useStateStore } from "../store";
 
-interface Props {
-  content: string;
-  setContent: (content: string) => void;
-}
+const NormalEditor = () => {
+  const content = useStateStore((state) => state.contents);
+  const updateContent = useStateStore((state) => state.updateContents);
 
-const NormalEditor: React.FC<Props> = ({ content, setContent }) => {
   const handleTextarea = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setContent(event.target.value);
+    updateContent(event.target.value);
   };
 
   return (

@@ -16,8 +16,6 @@ function Editor() {
   const name = currentPath?.split("/").pop();
   const setContents = useStateStore((state) => state.updateContents);
 
-  const [contents, setContentsState] = useState<string>("");
-
   const [toggleView, setToggleView] = useState<ViewTypes>(ViewTypes.Markdown);
 
   useEffect(() => {
@@ -26,9 +24,7 @@ function Editor() {
         const contents = await readTextFile(currentPath as string);
         if (contents) {
           setContents(contents);
-          setContentsState(contents);
         }
-        console.log(contents);
       } catch (err) {
         console.error(err);
       }
@@ -64,19 +60,15 @@ function Editor() {
       </div>
 
       <div className="editors">
-        {toggleView === ViewTypes.Markdown && (
-          <MarkdownViewer content={contents} />
-        )}
-        {toggleView === ViewTypes.Editor && (
-          <NormalEditor content={contents} setContent={setContentsState} />
-        )}
+        {toggleView === ViewTypes.Markdown && <MarkdownViewer />}
+        {toggleView === ViewTypes.Editor && <NormalEditor />}
         {toggleView === ViewTypes.Both && (
           <div className="handleEditors">
             <div>
-              <NormalEditor content={contents} setContent={setContentsState} />
+              <NormalEditor />
             </div>
             <div>
-              <MarkdownViewer content={contents} />
+              <MarkdownViewer />
             </div>
           </div>
         )}
