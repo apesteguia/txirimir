@@ -6,7 +6,7 @@ const MarkdownViewer = () => {
   const content = useStateStore((state) => state.contents);
 
   return (
-    <div className="markdownviewer">
+    <div className="normaleditor">
       <Markdown>{content || ""}</Markdown>{" "}
       {/* Agrega una cadena vacía como valor predeterminado */}
     </div>
